@@ -1,26 +1,6 @@
-Cloud To Butt Plus
+7 to Stubbe
 =============
 
-Chrome extension that replaces occurrences of 'the cloud' with 'my butt', and other amusing cloud-related substitutions.
+Extension that changes 7, seven and sju to stubbe.
 
-[Direct download of crx file](https://github.com/hank/cloud-to-butt/blob/master/CloudToButt.crx?raw=true)
-
-Screenshot Gallery
-------------------
-
-http://www.flickr.com/groups/cloud-to-butt/
-
-Installation
-------------
-
-In Chrome, choose Window > Extensions.  Drag CloudToButt.crx into the page that appears.
-
-Safari Version
---------------
-
-Can be found here: https://github.com/logancollins/cloud-to-butt-safari
-
-Firefox Version
----------------
-
-Can be found here: https://github.com/DaveRandom/cloud-to-butt-mozilla
+[Direct download of crx file](https://github.com/Fexilus/7-to-stubbe/blob/master/7ToStubbe.crx?raw=true)
