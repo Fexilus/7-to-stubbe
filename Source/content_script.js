@@ -32,24 +32,40 @@ function walk(node)
 function handleText(textNode) {
 	var v = textNode.nodeValue;
 
-  // Deal with swedish
-  v = v.replace(/(S|s)ju/g, function(match, p1, offset, string) {
-    s = String.fromCharCode(p1.charCodeAt(0));
-    return s + "tubbe";
-  });
-  
-  // Deal with english
-  v = v.replace(/(S|s)even/g, function(match, p1, offset, string) {
-    s = String.fromCharCode(p1.charCodeAt(0));
-    return s + "tubbe";
-  });
+	// Deal with 7
+	v = v.replace(/7/g, "stubbe");
 
-  // Deal with numbers in the begining of sentences
-  v = v.replace(/^7/gm, "Stubbe");
+	// Hyphonate
+	v = v.replace(/(\d)stubbe/g, function(match, p1, offset, string) {
+			return p1 + "-stubbe";
+	});
+	v = v.replace(/stubbe(\d)/g, function(match, p1, offset, string) {
+			return "stubbe-" + p1;
+	});
+	v = v.replace(/(stubbe)+/g, function(match, p1, offset, string) {
+			amount = match.length / 6;
+			text = "stubbe";
+			for (var i = 1; i < amount; i++) {
+					text = text + "-stubbe";
+			}
+			return text;
+	});
 
-  // Deal with numbers otherwise
-  v = v.replace(/7/g, "stubbe");
-  
+	// Deal with 7 in the begining of sentences
+	v = v.replace(/^stubbe/gm, "Stubbe");
+
+	// Deal with swedish
+	v = v.replace(/(S|s)ju/g, function(match, p1, offset, string) {
+	s = String.fromCharCode(p1.charCodeAt(0));
+	return s + "tubbe";
+	});
+	
+	// Deal with english
+	v = v.replace(/(S|s)even/g, function(match, p1, offset, string) {
+	s = String.fromCharCode(p1.charCodeAt(0));
+	return s + "tubbe";
+	});
+	
 	textNode.nodeValue = v;
 }
 
